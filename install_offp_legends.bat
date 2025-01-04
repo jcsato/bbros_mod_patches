@@ -4,7 +4,7 @@ for /f "eol=[ delims=" %%a in (ini.cfg) do (
     set "%%a"
 )
 
-set modname=off_plus_additional_equipment_patch
+set modname=off_plus_legends_patch
 set year=%DATE:~10,4%
 set month=%DATE:~4,2%
 set day=%DATE:~7,2%

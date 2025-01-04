@@ -13,6 +13,10 @@ Various patches to mods for the game Battle Brothers ([Steam](https://store.stea
 
 These patches aim to make certain mods compatible or more smoothly integrated.
 
+### **[Of Flesh and Faith+](https://github.com/jcsato/of_flesh_and_faith_plus) & [Legends](https://github.com/Battle-Brothers-Legends/Legends-public)**
+
+Updates the new content in OFF+ to be compatible with Legends.
+
 ### **[Of Flesh and Faith+](https://github.com/jcsato/of_flesh_and_faith_plus) & [Additional Equipment](https://github.com/jcsato/sato_additional_equipment_mod)**
 
 Makes one of the starting Assassins in the OFF+ Assassin origin start with the Reinforced Padded Armor from Additional Equipment.

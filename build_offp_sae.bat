@@ -1,7 +1,10 @@
 @echo off
 
+for /f "eol=[ delims=" %%a in (ini.cfg) do (
+    set "%%a"
+)
+
 set modname=off_plus_additional_equipment_patch
-set modkitdir=YOUR_MODKIT_BIN_PATH
 set version=1.0
 
 echo.
@@ -12,8 +15,8 @@ echo.
 mkdir "%~dp0\tmp_scripts"
 xcopy "%~dp0\scripts\!mods_preload\mod_p_offp_sae*" "%~dp0\tmp_scripts\" /i /e /y
 
-cd "%modkitdir%"
-CALL "%modkitdir%\masscompile.bat" "%~dp0\tmp_scripts"
+cd "%modkitpath%"
+CALL "%modkitpath%\masscompile.bat" "%~dp0\tmp_scripts"
 
 REM %~dp0 refers to the drive letter + path of where THIS batch file lives
 
