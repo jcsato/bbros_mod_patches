@@ -8,6 +8,7 @@ Various patches to mods for the game Battle Brothers ([Steam](https://store.stea
 -   [Requirements](#requirements)
 -   [Installation](#installation)
 -   [Uninstallation](#uninstallation)
+-   [Acknowledgements](#acknowledgements)
 
 ## Patches
 
@@ -40,3 +41,6 @@ Adds Masked Nomad Light Helmets from Additional Equipment to the list of Nomad g
 ## Uninstallation
 
 1) Remove the `<patch_name>_*.zip` file from your game's data directory
+
+## Acknowledgements
+- Big thanks to the Legends team, especially Luft, Breaky, and Chopeks, for their help in getting the Legends patch off the ground.
