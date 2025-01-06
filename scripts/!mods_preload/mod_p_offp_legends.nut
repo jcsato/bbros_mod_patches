@@ -1,4 +1,4 @@
-::mods_registerMod("off_plus_legends_patch", 0.2, "OFF+ & Legends Patch");
+::mods_registerMod("off_plus_legends_patch", 0.3, "OFF+ & Legends Patch");
 
 ::mods_queue("off_plus_legends_patch", "of_flesh_and_faith_plus, mod_legends", function() {
 	::include("script_hooks/anatomist_vs_oathtaker_event");

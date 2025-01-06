@@ -131,8 +131,4 @@
 		_event.m.Dude.setGender(0);
 		_event.m.Dude.getBackground().setGender(0);
 	};
-
-	atae.onUpdateScore = function() {
-		m.Score = 500;
-	}
 });
