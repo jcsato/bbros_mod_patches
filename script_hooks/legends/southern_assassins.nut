@@ -39,7 +39,7 @@
 	::mods_override(sas, "onSpawnPlayer", function() {
 		onSpawnPlayer();
 
-		World.Assets.updateLook(-104);
+		World.Assets.updateLook(204);
 	});
 });
 
