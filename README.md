@@ -18,6 +18,13 @@ These patches aim to make certain mods compatible or more smoothly integrated.
 
 Updates the new content in OFF+ to be compatible with Legends.
 
+### **[Of Flesh and Faith+](https://github.com/jcsato/of_flesh_and_faith_plus) & [Reforged](https://github.com/Battle-Modders/mod-reforged)**
+
+Fixes some minor incompatibilities between OFF+ and Reforged:
+- The Drill Sergeant is no longer hidden when playing as the Rune Chosen, as Reforged changes how retinue unlocks work
+- Bros added by some of the more important events in OFF+ are now guaranteed to spawn with weapon perk trees applicable to their mainhand weapon, as normal recruits are.
+- The special perks added in the Southern Assassins origin will properly unlock the next row of perks as in vanilla.
+
 ### **[Of Flesh and Faith+](https://github.com/jcsato/of_flesh_and_faith_plus) & [Additional Equipment](https://github.com/jcsato/sato_additional_equipment_mod)**
 
 Makes one of the starting Assassins in the OFF+ Assassin origin start with the Reinforced Padded Armor from Additional Equipment.
