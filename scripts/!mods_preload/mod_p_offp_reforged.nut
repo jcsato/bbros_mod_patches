@@ -1,4 +1,4 @@
-::mods_registerMod("off_plus_reforged_patch", 1.0, "OFF+ & Reforged Patch");
+::mods_registerMod("off_plus_reforged_patch", 1.1, "OFF+ & Reforged Patch");
 
 ::mods_queue("off_plus_reforged_patch", "of_flesh_and_faith_plus, mod_reforged, mod_dynamic_perks", function() {
 	// Sometimes bros added in events who've had their equipment altered after setStartValuesEx is called
@@ -81,4 +81,28 @@
 			}
 		}
 	});
+
+	local promisedPotentialPerk = ::Const.Perks.LookupMap["perk.rf_promised_potential"];
+	if ("verifyPrerequisites" in promisedPotentialPerk) {
+		local verifyPrerequisites = promisedPotentialPerk.verifyPrerequisites;
+
+		promisedPotentialPerk.verifyPrerequisites = function(_player, _tooltip) {
+			if (_player.getPerkPointsSpent() == 1 && ("State" in World) && World.State != null && World.Assets.getOrigin() != null && World.Assets.getOrigin().getID() == "scenario.southern_assassins")
+				return true;
+
+			return verifyPrerequisites(_player, _tooltip);
+		}
+	}
+
+	local discoveredTalentPerk = ::Const.Perks.LookupMap["perk.rf_discovered_talent"];
+	if ("verifyPrerequisites" in discoveredTalentPerk) {
+		local verifyPrerequisites = discoveredTalentPerk.verifyPrerequisites;
+
+		discoveredTalentPerk.verifyPrerequisites = function(_player, _tooltip) {
+			if (_player.getPerkPointsSpent() == 1 && ("State" in World) && World.State != null && World.Assets.getOrigin() != null && World.Assets.getOrigin().getID() == "scenario.southern_assassins")
+				return true;
+
+			return verifyPrerequisites(_player, _tooltip);
+		}
+	}
 });
