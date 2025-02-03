@@ -118,15 +118,18 @@
 		scaleBroForOaths(dude);
 
 		local items = dude.getItems();
-		if (items.getItemAtSlot(Const.ItemSlot.Head).getID() == "armor.head.heavy_mail_coif") {
-			items.unequip(items.getItemAtSlot(Const.ItemSlot.Head));
-			items.equip(Const.World.Common.pickHelmet([ [1, "heavy_mail_coif"] ]));
-		} else if (items.getItemAtSlot(Const.ItemSlot.Head).getID() == "armor.head.adorned_closed_flat_top_with_mail") {
-			items.unequip(items.getItemAtSlot(Const.ItemSlot.Head));
-			items.equip(Const.World.Common.pickHelmet([ [1, "adorned_closed_flat_top_with_mail"] ]));
-		} else if (items.getItemAtSlot(Const.ItemSlot.Head).getID() == "armor.head.adorned_full_helm") {
-			items.unequip(items.getItemAtSlot(Const.ItemSlot.Head));
-			items.equip(Const.World.Common.pickHelmet([ [1, "adorned_full_helm"] ]));
+		local helmet = items.getItemAtSlot(Const.ItemSlot.Head);
+		if (helmet != null) {
+			if (helmet.getID() == "armor.head.heavy_mail_coif") {
+				items.unequip(helmet);
+				items.equip(Const.World.Common.pickHelmet([ [1, "heavy_mail_coif"] ]));
+			} else if (helmet.getID() == "armor.head.adorned_closed_flat_top_with_mail") {
+				items.unequip(helmet);
+				items.equip(Const.World.Common.pickHelmet([ [1, "adorned_closed_flat_top_with_mail"] ]));
+			} else if (helmet.getID() == "armor.head.adorned_full_helm") {
+				items.unequip(helmet);
+				items.equip(Const.World.Common.pickHelmet([ [1, "adorned_full_helm"] ]));
+			}
 		}
 
 		if (items.getItemAtSlot(Const.ItemSlot.Body).getID() == "armor.body.adorned_mail_shirt") {
