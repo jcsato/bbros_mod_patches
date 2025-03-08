@@ -1,4 +1,4 @@
-::mods_registerMod("off_plus_reforged_patch", 1.1, "OFF+ & Reforged Patch");
+::mods_registerMod("off_plus_reforged_patch", 1.2, "OFF+ & Reforged Patch");
 
 ::mods_queue("off_plus_reforged_patch", "of_flesh_and_faith_plus, mod_reforged, mod_dynamic_perks", function() {
 	// Sometimes bros added in events who've had their equipment altered after setStartValuesEx is called
@@ -59,6 +59,17 @@
 		::mods_override(sas, "addPhilosophy", function(_bro) {
 			addPhilosophy(_bro);
 			_bro.setPerkTier(_bro.getPerkTier() + 1);
+		});
+	});
+
+	::mods_hookExactClass("entity/tactical/player", function(p) {
+		local resetPerks = ::mods_getMember(p, "resetPerks");
+
+		::mods_override(p, "resetPerks", function() {
+			resetPerks();
+
+			if (("State" in World) && World.State != null && World.Assets.getOrigin() != null && World.Assets.getOrigin().getID() == "scenario.southern_assassins")
+				World.Assets.getOrigin().onHired(this);
 		});
 	});
 
