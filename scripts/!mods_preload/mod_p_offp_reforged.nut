@@ -1,4 +1,4 @@
-::mods_registerMod("off_plus_reforged_patch", 1.2, "OFF+ & Reforged Patch");
+::mods_registerMod("off_plus_reforged_patch", 1.3, "OFF+ & Reforged Patch");
 
 ::mods_queue("off_plus_reforged_patch", "of_flesh_and_faith_plus, mod_reforged, mod_dynamic_perks", function() {
 	// Sometimes bros added in events who've had their equipment altered after setStartValuesEx is called
@@ -42,17 +42,17 @@
 
 	// Reforged relies on a perk tier, rather than player.m.PerkPointsSpent, to determine rows of perks unlocked
 	::mods_hookExactClass("scenarios/world/southern_assassins_scenario", function(sas) {
-		local addPoisonSpeciality = ::mods_getMember(sas, "addPoisonSpeciality");
-		local addCombatSpeciality = ::mods_getMember(sas, "addCombatSpeciality");
+		local addPoisonSpecialty = ::mods_getMember(sas, "addPoisonSpecialty");
+		local addCombatSpecialty = ::mods_getMember(sas, "addCombatSpecialty");
 		local addPhilosophy = ::mods_getMember(sas, "addPhilosophy");
 
-		::mods_override(sas, "addPoisonSpeciality", function(_bro) {
-			addPoisonSpeciality(_bro);
+		::mods_override(sas, "addPoisonSpecialty", function(_bro) {
+			addPoisonSpecialty(_bro);
 			_bro.setPerkTier(_bro.getPerkTier() + 1);
 		});
 
-		::mods_override(sas, "addCombatSpeciality", function(_bro) {
-			addCombatSpeciality(_bro);
+		::mods_override(sas, "addCombatSpecialty", function(_bro) {
+			addCombatSpecialty(_bro);
 			_bro.setPerkTier(_bro.getPerkTier() + 1);
 		});
 
