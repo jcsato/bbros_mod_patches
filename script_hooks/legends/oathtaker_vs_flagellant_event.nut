@@ -22,11 +22,11 @@
 		}
 	}
 
-	local hasWeaponMastery = ::mods_getMember(oovfe, "hasWeaponMastery");
+	local hasNonFlailWeaponMastery = ::mods_getMember(oovfe, "hasNonFlailWeaponMastery");
 
 	// Add new Legends masteries to check to prevent
-	oovfe.hasWeaponMastery = function(bro) {
-		local hasMastery = hasWeaponMastery(bro);
+	oovfe.hasNonFlailWeaponMastery = function(bro) {
+		local hasMastery = hasNonFlailWeaponMastery(bro);
 
 		return hasMastery || bro.getCurrentProperties().IsSpecializedInSlings || bro.getCurrentProperties().IsSpecializedInStaffStun || bro.getCurrentProperties().IsSpecializedInStaves;
 	}
