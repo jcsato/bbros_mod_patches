@@ -39,17 +39,6 @@
 	});
 });
 
-::mods_hookExactClass("items/weapons/legendary/barbarian_runeblade", function(br) {
-	local create = ::mods_getMember(br, "create");
-
-	::mods_override(br, "create", function() {
-		create();
-
-		m.WeaponType = Const.Items.WeaponType.Sword;
-		m.Categories = "Sword";
-	});
-});
-
 ::mods_hookNewObject("events/offplus_runeknights_events/events/death_knight_confrontation_event", function(dkce) {
 	foreach(screen in dkce.m.Screens) {
 		if (screen.ID == "A") {
