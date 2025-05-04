@@ -29,6 +29,10 @@ Fixes some minor incompatibilities between OFF+ and Reforged:
 
 Makes one of the starting Assassins in the OFF+ Assassin origin start with the Reinforced Padded Armor from Additional Equipment.
 
+### **[Of Flesh and Faith+](https://github.com/jcsato/of_flesh_and_faith_plus) & [Equipment Variants](https://github.com/jcsato/sato_equipment_variants_mod)**
+
+Ensures the starting Oathtakers in the OFF+ version of the origin start with color coordinated armor using the variants added by Equipment Variants.
+
 ### **[Expanded Markets](https://github.com/jcsato/sato_expanded_markets_mod) & [Additional Equipment](https://github.com/jcsato/sato_additional_equipment_mod)**
 
 Adds Masked Nomad Light Helmets from Additional Equipment to the list of Nomad gear that can show up in marketplaces with Expanded Markets.
