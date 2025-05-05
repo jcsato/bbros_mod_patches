@@ -33,7 +33,7 @@ Allows Oathtakers that can join the company in Oathtakers origin-specific OFF+ e
 
 ### **[Of Flesh and Faith+](https://github.com/jcsato/of_flesh_and_faith_plus) & [Equipment Variants](https://github.com/jcsato/sato_equipment_variants_mod)**
 
-Ensures the starting Oathtakers in the OFF+ version of the origin start with color coordinated armor using the variants added by Equipment Variants.
+Ensures the starting and event Oathtakers in the OFF+ version of the origin spawn with color coordinated armor using the variants added by Equipment Variants.
 
 ### **[Expanded Markets](https://github.com/jcsato/sato_expanded_markets_mod) & [Additional Equipment](https://github.com/jcsato/sato_additional_equipment_mod)**
 
