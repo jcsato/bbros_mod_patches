@@ -5,7 +5,7 @@ for /f "eol=[ delims=" %%a in (ini.cfg) do (
 )
 
 set modname=off_plus_additional_equipment_patch
-set version=1.0
+set version=1.1
 
 echo.
 echo Creating temporary directory...

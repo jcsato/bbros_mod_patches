@@ -29,6 +29,8 @@ Fixes some minor incompatibilities between OFF+ and Reforged:
 
 Makes one of the starting Assassins in the OFF+ Assassin origin start with the Reinforced Padded Armor from Additional Equipment.
 
+Allows Oathtakers that can join the company in Oathtakers origin-specific OFF+ events to (eventually) spawn with Decorated Full Helms.
+
 ### **[Of Flesh and Faith+](https://github.com/jcsato/of_flesh_and_faith_plus) & [Equipment Variants](https://github.com/jcsato/sato_equipment_variants_mod)**
 
 Ensures the starting Oathtakers in the OFF+ version of the origin start with color coordinated armor using the variants added by Equipment Variants.
