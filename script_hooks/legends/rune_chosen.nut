@@ -39,6 +39,13 @@
 	});
 });
 
+::mods_hookNewObject("retinue/followers/drill_sergeant_follower", function(dsf) {
+
+	dsf.isVisible <- function() {
+		return true;
+	};
+});
+
 ::mods_hookNewObject("events/offplus_runeknights_events/events/death_knight_confrontation_event", function(dkce) {
 	foreach(screen in dkce.m.Screens) {
 		if (screen.ID == "A") {
