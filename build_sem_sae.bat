@@ -13,7 +13,7 @@ echo.
 
 @REM  /i means create tmp\scripts if it's not there, /e means copy subdirectories even if empty, /f outputs full src/dst paths (if you want), /y means overwrite, /c ignores errors
 mkdir "%~dp0\tmp_scripts"
-xcopy "%~dp0\scripts\!mods_preload\mod_p_sem_sae*" "%~dp0\tmp_scripts\" /i /e /y
+xcopy "%~dp0\scripts\!mods_preload\mod_p_sem_sae*" "%~dp0\tmp_scripts\!mods_preload" /i /e /y
 
 cd "%modkitpath%"
 CALL "%modkitpath%\masscompile.bat" "%~dp0\tmp_scripts"

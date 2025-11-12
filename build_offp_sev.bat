@@ -4,7 +4,7 @@ for /f "eol=[ delims=" %%a in (ini.cfg) do (
     set "%%a"
 )
 
-set modname=off_plus_additional_equipment_patch
+set modname=off_plus_equipment_variants_patch
 set version=1.1
 
 echo.
@@ -13,7 +13,7 @@ echo.
 
 @REM  /i means create tmp\scripts if it's not there, /e means copy subdirectories even if empty, /f outputs full src/dst paths (if you want), /y means overwrite, /c ignores errors
 mkdir "%~dp0\tmp_scripts"
-xcopy "%~dp0\scripts\!mods_preload\mod_p_offp_sae*" "%~dp0\tmp_scripts\!mods_preload" /i /e /y
+xcopy "%~dp0\scripts\!mods_preload\mod_p_offp_sev*" "%~dp0\tmp_scripts\!mods_preload" /i /e /y
 
 cd "%modkitpath%"
 CALL "%modkitpath%\masscompile.bat" "%~dp0\tmp_scripts"
