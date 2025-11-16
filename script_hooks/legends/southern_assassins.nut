@@ -15,6 +15,10 @@
 
 		local bros = World.getPlayerRoster().getAll();
 
+		// Legends veteran level perk points, ick, eww, cooties
+		bros[0].setVeteranPerks(2);
+		bros[1].setVeteranPerks(2);
+
 		bros[0].getBackground().m.RawDescription = "%name% is your most talented pupil, a truly rare combination of skilled, efficient, and professional. You've never quite been able to get a read on the %person%, but you know %their% skills will be invaluable to the %companyname%, and when you asked %them% to join you in exile %they% agreed without a moment's hesitation. If only more were like %them%.";
 		bros[0].getBackground().buildDescription(true);
 

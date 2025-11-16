@@ -14,6 +14,10 @@
 
 		local bros = World.getPlayerRoster().getAll();
 
+		// Legends veteran level perk points, ick, eww, cooties
+		bros[0].setVeteranPerks(2);
+		bros[1].setVeteranPerks(2);
+
 		bros[0].getBackground().m.RawDescription = "{%name% is rather old, nigh on decrepit, a rarity amongst the militant and doubly so amongst the Oathtakers. Few throw themselves into danger with the reckless abandon of Young Anselm's paladins, and to grow old in their number requires great skill indeed. Though age has dulled some of %their% natural abilities, %they% still commands much respect from %their% fellow Oathtakers. Seeing %them% bellow as %they% cleaves through the order's foes, you can see why. | %name% is a walker of many spirits, having wandered the world in the shell of soldier, farmer, sellsword, and more. %They% has never divulged what events saw %them% join the Oathtakers, but in the years since %they% has proven one of the most ardent followers of the Oaths. When schism tore the group asunder, none questioned %name%'s right to safeguard Young Anselm's skull.}";
 		bros[0].getBackground().buildDescription(true);
 
@@ -99,9 +103,9 @@
 				foreach (reward in rewards) {
 					local item;
 					if (reward.find("helmet") != null)
-						item = Const.World.Common.pickHelmet(reward.slice(8));
+						item = Const.World.Common.pickHelmet([ [1, reward.slice(8)] ]);
 					else
-						item = Const.World.Common.pickArmor(reward.slice(6));
+						item = Const.World.Common.pickArmor([ [1, reward.slice(6)] ]);
 
 					World.Assets.getStash().add(item);
 					List.push( { id = 10, icon = "ui/items/" + item.getIcon(), text = "You gain " + Const.Strings.getArticle(item.getName()) + item.getName() } );
@@ -179,26 +183,13 @@
 
 ::mods_hookNewObject("events/events/dlc8/oathbreaker_event", function(oe) {
 	foreach(screen in oe.m.Screens) {
-		if (screen.ID == "Oathtakers") {
-			local start = screen.start;
-
-			screen.start = function(_event) {
-				start(_event);
-				local gender = _event.m.Dude.getGender();
-				Text = "[img]gfx/ui/events/event_180.png[/img]{You come across a " + Const.LegendMod.getPronoun(gender, "person") + " laid out on the ground, legs scissoring back and forth in a drunken stupor, " + Const.LegendMod.getPronoun(gender, "their") + " arms slung out as if they were around the shoulders of friends but instead only find the comfort of mud. Far more notable than " + Const.LegendMod.getPronoun(gender, "their") + " squalor, however, is the armor " + Const.LegendMod.getPronoun(gender, "they") + " wears. Adorned in trophies and totems, you've only seen its like on thieves and your oath-bound brethren. From the ease with which " + Const.LegendMod.getPronoun(gender, "they") + " windmills around in it, you take " + Const.LegendMod.getPronoun(gender, "them") + " to be one of the latter. " + Const.LegendMod.getPronoun(gender, "They") + " notices you and calls out.%SPEECH_ON%I beseech ye, traveler, buy m'armors and m'weapons, and leave me the crowns suitably worthy of both, such that I may seek redemption another way, for them martial matters are no longer kin to my path in this world. May the old gods -hic- smite me for admittin' it aloud but I'll admit it aloud!%SPEECH_OFF%The Oathbreaker stumbles and hobbles and props " + Const.LegendMod.getPronoun(gender, "themselves") + " up on his knees and groggily takes in the sight of you and the %companyname%. A moment of blankness, then a moment of cognition in which " + Const.LegendMod.getPronoun(gender, "they") + " realizes you're Oathtakers, and then,%SPEECH_ON%Oh, shite.%SPEECH_OFF%}";
-			}
-		}
-
 		if (screen.ID == "OathtakersJoin") {
 			local start = screen.start;
 
 			screen.start = function(_event) {
 				start(_event);
-				local gender = _event.m.Dude.getGender();
-				Text = "[img]gfx/ui/events/event_180.png[/img]{As you once left the order yourself, you're sympathetic to the " + Const.LegendMod.getPronoun(gender, "person") + "'s plight. It's one thing to kill for survival or for coin, but entirely another to drain blood simply out of principle. There is of course a power in strong belief that the %companyname% is now intimately familiar with, a thaumaturgy all to its own wherein the blade is guided and the belly filled and the journey pleasant simply because it is decreed to be. To the apostate, however, violence borne only from principles unveils a deep, black truth of the world: that life is so cheap it can be bought with nothing more than dead men's thoughts, given steel form by the ardent's hands. It doesn't take long for an unfaithful mind to wonder when the life on barter will be theirs, and by then fear has already taken root.\n\nStill, sympathetic though " + Const.LegendMod.getPronoun(gender, "they") + " may be, there is a price to pay for leaving the order. One look at the muddied Oathbreaker tells you it's a price " + Const.LegendMod.getPronoun(gender, "they") + " can ill afford. Instead of exacting it, you hold out your hand.%SPEECH_ON%Young Anselm taught us to swear our oaths precisely because he knew we would falter, for to falter is to live. Do you think being here in the mud is error? Do you think your failures are something mended by coin?%SPEECH_OFF%The " + Const.LegendMod.getPronoun(gender, "person") + " looks up at you through bleary eyes. " + Const.LegendMod.getPronoun(gender, "They") + " asks how a " + Const.LegendMod.getPronoun(gender, "person") + " like " + Const.LegendMod.getPronoun(gender, "them") + " is supposed to regain Young Anselm's favor. " + Const.LegendMod.getPronoun(gender, "They") + " still hasn't taken your hand, so you take " + Const.LegendMod.getPronoun(gender, "theirs") + " and pull " + Const.LegendMod.getPronoun(gender, "them") + " to " + Const.LegendMod.getPronoun(gender, "their") + " feet.%SPEECH_ON%Together. Wherever an Oathtaker is in the world, he is not alone. Was that not Young Anselm's first message?%SPEECH_OFF%The " + Const.LegendMod.getPronoun(gender, "person") + " slowly cracks a wide grin and gives you a teary-eyed but firm hug, embracing you and the company together.}";
-
-				_event.m.Dude.getBackground().m.RawDescription = "Like many, %name% was found in squalor. Ale on %their% lips, grime in %their% ears, piss and shit at least somewhere on %their% person. The meek-hearted %person% turned %their% back on Young Anselm and once sought to abandon the Oaths, but when you offered %them% the chance to redeem %themselves% among like-minded aspirants, %they% leapt at it. It remains to be seen if %their% newfound resolve comes from within, or is simply the confidence that comes with numbers - and beer - but %their% desire to find the order's good graces seems earnest, at least.";
-				_event.m.Dude.getBackground().buildDescription(true);
+				_event.m.Dude.setGender(0);
+				_event.m.Dude.getBackground().setGender(0);
 
 				local items = _event.m.Dude.getItems();
 				if (items.getItemAtSlot(Const.ItemSlot.Head).getID() == "armor.head.heavy_mail_coif") {
@@ -231,9 +222,6 @@
 			local start = screen.start;
 
 			screen.start = function(_event) {
-				local gender = _event.m.Dude.getGender();
-				Text = "[img]gfx/ui/events/event_180.png[/img]{You're no stranger to the order's shortcomings, but there are rules about these things. When you left, you grit your teeth and did it right, even if they didn't deserve it. You certainly aren't about to let some drunk coward escape like this.%SPEECH_ON%You know the rules. When you leave the order, you owe it dues. Pay up.%SPEECH_OFF%The Oathbreaker holds stock still for a moment, weighing " + Const.LegendMod.getPronoun(gender, "their") + " options. Realizing " + Const.LegendMod.getPronoun(gender, "they") + " has no way out of this, " + Const.LegendMod.getPronoun(gender, "they") + " starts to remove " + Const.LegendMod.getPronoun(gender, "their") + " armor in stony silence. " + Const.LegendMod.getPronoun(gender, "They") + " bundles them up and passes them off to %randombrother%, then turns to leave. No, " + Const.LegendMod.getPronoun(gender, "they") + " won't get off that easy.%SPEECH_ON%And the tithe of penance.%SPEECH_OFF%The " + Const.LegendMod.getPronoun(gender, "person") + " opens " + Const.LegendMod.getPronoun(gender, "their") + " mouth to protest, but no words come out. Instead " + Const.LegendMod.getPronoun(gender, "they") + " bites " + Const.LegendMod.getPronoun(gender, "their") + " lip and tosses you a filthy burlap pouch that jingles with the sound of the few crowns within. You count out a tenth of their sum and pocket it, put the rest back in the pouch and throw it back at " + Const.LegendMod.getPronoun(gender, "them") + ". " + Const.LegendMod.getPronoun(gender, "They") + " catches it and flinches as if it stung " + Const.LegendMod.getPronoun(gender, "them") + ".%SPEECH_ON%Go.%SPEECH_OFF%You order and " + Const.LegendMod.getPronoun(gender, "they") + " obeys, tears welling in " + Const.LegendMod.getPronoun(gender, "their") + " red eyes as " + Const.LegendMod.getPronoun(gender, "they") + " stumbles down the road. " + Const.LegendMod.getPronoun(gender, "They") + " still can't walk in a straight line, but you're sure the experience was sobering for the Oathbreaker nonetheless.}";
-
 				local item;
 				local stash = World.Assets.getStash();
 

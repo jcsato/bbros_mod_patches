@@ -13,6 +13,11 @@
 
 		local bros = World.getPlayerRoster().getAll();
 
+		// Legends veteran level perk points, literally worse than the Pillager Rot
+		bros[0].setVeteranPerks(2);
+		bros[1].setVeteranPerks(2);
+		bros[2].setVeteranPerks(2);
+
 		bros[0].getBackground().m.RawDescription = "%name% spent %their% life in the wilds, isolated from civilization. %They% might be there still, were it not for the veins in %their% arms turning black one day, and a fateful encounter with two escaped prisoners who shared a similar condition.";
 		bros[0].getBackground().buildDescription(true);
 

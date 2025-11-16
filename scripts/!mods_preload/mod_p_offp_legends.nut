@@ -1,10 +1,12 @@
-::mods_registerMod("off_plus_legends_patch", 0.6, "OFF+ & Legends Patch");
+::mods_registerMod("off_plus_legends_patch", 0.7, "OFF+ & Legends Patch");
 
 ::mods_queue("off_plus_legends_patch", "of_flesh_and_faith_plus, mod_legends", function() {
 	::include("script_hooks/anatomist_vs_oathtaker_event");
 	::include("script_hooks/anatomists_experimental_integrity");
 	::include("script_hooks/cursed_explorers");
 	::include("script_hooks/mutant_wants_hazard_pay_event");
+	::include("script_hooks/oath_of_endurance");
+	::include("script_hooks/oathbreaker_background");
 	::include("script_hooks/oathtaker_complains_event");
 	::include("script_hooks/oathtaker_vs_cultist_event");
 	::include("script_hooks/oathtaker_vs_flagellant_event");

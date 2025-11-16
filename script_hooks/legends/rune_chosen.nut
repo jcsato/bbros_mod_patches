@@ -14,6 +14,10 @@
 
 		local bros = World.getPlayerRoster().getAll();
 
+		// Legends veteran level perk points, ick, eww, cooties
+		bros[0].setVeteranPerks(2);
+		bros[1].setVeteranPerks(2);
+
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(Const.ItemSlot.Body));
 		items.unequip(items.getItemAtSlot(Const.ItemSlot.Head));
@@ -39,15 +43,17 @@
 	});
 });
 
-::mods_hookExactClass("items/weapons/legendary/barbarian_runeblade", function(br) {
-	local create = ::mods_getMember(br, "create");
+::mods_hookNewObject("retinue/followers/drill_sergeant_follower", function(dsf) {
+	local isVisible = dsf.isVisible;
 
-	::mods_override(br, "create", function() {
-		create();
-
-		m.WeaponType = Const.Items.WeaponType.Sword;
-		m.Categories = "Sword";
-	});
+	// Force DS visibility to true
+	// Legends removes the permanent injury requirement so he should no longer be disabled for Rune Chosen
+	dsf.isVisible = function() {
+		if (World.Assets.getOrigin().getID() == "scenario.runeknights")
+			return true;
+		else
+			return isVisible();
+	};
 });
 
 ::mods_hookNewObject("events/offplus_runeknights_events/events/death_knight_confrontation_event", function(dkce) {
