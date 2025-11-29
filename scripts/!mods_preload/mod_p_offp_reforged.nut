@@ -1,4 +1,4 @@
-::mods_registerMod("off_plus_reforged_patch", 1.3, "OFF+ & Reforged Patch");
+::mods_registerMod("off_plus_reforged_patch", 1.4, "OFF+ & Reforged Patch");
 
 ::mods_queue("off_plus_reforged_patch", "of_flesh_and_faith_plus, mod_reforged, mod_dynamic_perks", function() {
 	// Sometimes bros added in events who've had their equipment altered after setStartValuesEx is called
@@ -72,6 +72,19 @@
 				World.Assets.getOrigin().onHired(this);
 		});
 	});
+
+	// In Reforged v0.7.17 an event was added to make Oathtakers take random oaths *outside* of the origin
+	//  Because OFF+ uses a different origin ID under the hood, the patch needs to replicate that check
+	::mods_hookNewObject("events/events/rf_oathtakers_take_oaths_in_regular_origins_event", function(rotoiroe) {
+		local isValid = rotoiroe.isValid;
+
+		rotoiroe.isValid = function() {
+			if (World.Assets.getOrigin().getID() == "scenario.oathtakers")
+				return false;
+
+			return isValid();
+		}
+	};)
 
 	::mods_hookNewObject("events/offplus_oathtakers_events/special/oathtaker_brings_oaths_event", function(oboe) {
 		local scaleBroForOaths = oboe.scaleBroForOaths;

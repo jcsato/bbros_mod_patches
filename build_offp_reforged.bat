@@ -5,7 +5,7 @@ for /f "eol=[ delims=" %%a in (ini.cfg) do (
 )
 
 set modname=off_plus_reforged_patch
-set version=1.3
+set version=1.4
 
 echo.
 echo Creating temporary directory...
