@@ -14,9 +14,17 @@ Various patches to mods for the game Battle Brothers ([Steam](https://store.stea
 
 These patches aim to make certain mods compatible or more smoothly integrated.
 
+### **[Blazing Deserts+](https://github.com/jcsato/blazing_deserts_plus) & [Enemy Balance](https://github.com/jcsato/sato_enemy_balance_mod)**
+
+Increases the strength of Indebted in the arena to account for Enemy Balance granting them Nine Lives.
+
 ### **[Of Flesh and Faith+](https://github.com/jcsato/of_flesh_and_faith_plus) & [Legends](https://github.com/Battle-Brothers-Legends/Legends-public)**
 
-Updates the new content in OFF+ to be compatible with Legends.
+Updates the new content in OFF+ to be compatible with Legends. For example:
+- The Drill Sergeant is no longer hidden when playing as the Rune Chosen, as Legends changes how retinue unlocks work
+- Making events more gender neutral to account for female player units in Legends
+- Various gear obtainable through events or spawning with bros is now layered
+- And so on
 
 ### **[Of Flesh and Faith+](https://github.com/jcsato/of_flesh_and_faith_plus) & [Reforged](https://github.com/Battle-Modders/mod-reforged)**
 
@@ -24,6 +32,7 @@ Fixes some minor incompatibilities between OFF+ and Reforged:
 - The Drill Sergeant is no longer hidden when playing as the Rune Chosen, as Reforged changes how retinue unlocks work
 - Bros added by some of the more important events in OFF+ are now guaranteed to spawn with weapon perk trees applicable to their mainhand weapon, as normal recruits are.
 - The special perks added in the Southern Assassins origin will properly unlock the next row of perks as in vanilla.
+- And so on
 
 ### **[Of Flesh and Faith+](https://github.com/jcsato/of_flesh_and_faith_plus) & [Additional Equipment](https://github.com/jcsato/sato_additional_equipment_mod)**
 
