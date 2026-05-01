@@ -5,7 +5,7 @@ for /f "eol=[ delims=" %%a in (ini.cfg) do (
 )
 
 set modname=off_plus_legends_patch
-set version=0.7
+set version=0.8
 
 echo.
 echo Creating temporary directory...

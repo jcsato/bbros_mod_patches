@@ -1,5 +1,7 @@
-::mods_registerMod("off_plus_legends_patch", 0.7, "OFF+ & Legends Patch");
+::mods_registerMod("off_plus_legends_patch_shim", 0.1, "OFF+ & Legends Patch Load Order Shim");
+::mods_registerMod("off_plus_legends_patch", 0.8, "OFF+ & Legends Patch");
 
+::mods_queue("off_plus_legends_patch_shim", "mod_legends, <of_flesh_and_faith_plus, <off_plus_legends_patch", function() {});
 ::mods_queue("off_plus_legends_patch", "of_flesh_and_faith_plus, mod_legends", function() {
 	::include("script_hooks/anatomist_vs_oathtaker_event");
 	::include("script_hooks/anatomists_experimental_integrity");
